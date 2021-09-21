@@ -1,0 +1,27 @@
+<body>
+    <h2>Hello there !!! Detail Page Reporting</h2> sds  D S
+    <table >
+        <tr>
+            <th>NAME</th>
+            <th></th>
+            <th>QUANTITY</th>
+        </tr>
+        
+        <tr>
+            <td> {{stock.name}} </td> 
+            <td> {{stock.number }} </td>
+            <td> {{stock.quantity}} </td>
+        </tr>
+        <tr>
+            <th>broker</th>
+
+        </tr>
+        {% for i in broker %}
+        <tr>
+            <td>{{i.name}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</body>

@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body >
+    <div class="container">
+
+    <h2 style="text-align: center; "  >Stock Management System</h2>
+    <h4 ><a href="{% url 'stockcreate' %}">Add stock</a></h4>
+    <table class="table table-striped"  >
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">LTP</th>
+            <th scope="col">Quantity</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocks %}
+          <tr>
+            <td> {{stock.name}} </td> 
+            <td>{{stock.ltp}}</td>
+            <td> {{stock.quantity}} </td>
+            <td><a href="{% url 'stockdetail' stock.pk %}">View</a></td>
+            <td><a href="{% url 'updatestock' stock.pk %}">Update</a></td>
+            <td><a href="{% url 'updatestockbyclass' stock.pk %}">UpdateByClass</a></td>
+            <td>  <a href="{%  url 'delete' stock.pk  %}">Delete</a>   </td>
+          </tr>
+         {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+   
+</body>
+</html>

@@ -1,0 +1,6 @@
+<h2> deleting </h2>
+<h4>Are you sure want to delete !!!</h4>
+<form method="POST" action="/delete/{{stock.pk}}">
+    {% csrf_token %}
+    <input type="submit" value="delete">
+</form>

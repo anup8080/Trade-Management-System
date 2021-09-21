@@ -1,0 +1,9 @@
+<h4> Hello Update </h4>{{stock.pk}}
+
+<form method="POST" action="/update/{{stock.pk}}">
+    {% csrf_token %}
+    Name:<input type="text" value= {{stock.name}} name="name"> <br>
+    LTP:<input type="integer" value={{stock.ltp}} name="Ltp"><br>
+    Quantity:<input type="integer" value={{stock.quantity}} name="Quantity">   <br>
+    <input type="submit" value="submit">
+</form>
